@@ -1,0 +1,774 @@
+/* ------------------------------------
+  CSS Stylesheet Responsive 
+  Author: Letícia Matos | leticiamatos.com 
+------------------------------------ */ 
+
+// .block_wpr.header_secondary_social .col1-3{
+//   width: 33.3333% !important;
+// }
+
+// Font size
+body{
+  font-size: 100%;
+}
+a.btn,
+input.btn{
+  font-size: 110%;
+}
+input.txt,
+textarea.txt{
+  font-size: 15px;
+}
+.col1-6,
+.col2-6,
+.col3-6,
+.col4-6,
+.col5-6,
+.col6-6,
+.col1-2,
+.col1-3,
+.col1-4,
+.col2-3,
+.col2-4,
+.col3-4{
+  float: left;
+} 
+
+.block_wpr.search{
+  display: block;
+  padding-bottom: 20px;
+}
+body.home .block_wpr.search{
+  padding-bottom: 0;
+}
+
+
+/* Responsive layout */
+
+@media only screen and (max-width: 760px) {
+  .header_secondary_social{
+    height: 100px;
+  }
+  .block_title{
+    font-size: 180%;
+  }
+  .menu.responsive .menu_link{
+    top: -80px;
+  }
+  .highlight.block_wpr {
+    .lastposts.wpr {
+      article figure { padding-right: 0;}
+    }
+  }
+  .formulario, 
+  .newsletter {
+    label {
+      width: 100%;
+      text-align: center;
+    }
+    .wpcf7{
+      clear: both;
+    }
+    .form_div{
+      width: 100%;
+    }
+    .buttons{
+      width: 100%;
+      padding-left: 0;
+      text-align: center;
+      margin-top: 5px
+    }
+  }
+  article.post{
+    padding-bottom: 30px;
+    figure{
+      width: 100% !important;
+    }
+  }
+  .block_wpr.block_tab.caminhoneiro .tab_wpr2{
+    padding-left: 25px;
+  }
+  .block_wpr.blogsecolunas {
+    .blogs-e-colunas.wpr{
+      width: 100%;
+      // padding: 20px;
+
+      article figure{
+        padding-right: 0;
+      }
+    }
+    .col_cntt{
+      height: auto;
+    }
+    .adv.blog{
+      text-align: center;
+      width: 100%;
+      figure{
+        position: relative;
+      }
+    }
+  }
+  .block_wpr.panorama .col2-3 {
+    .panorama.item{
+      clear: both;
+      width: 100% !important;
+      article{
+        padding-left: 0;
+      }
+    }
+    .panorama.list{
+      padding-right: 0;
+    }
+  }
+  .prefooter.contato{
+    .col1, .col2{
+      clear: both;
+      width: 100%;
+      padding-right: 0;
+      padding-left: 0;
+    } 
+    .col2{
+      padding-top: 0;
+    }
+  }
+  .bar_category .list{
+    display: none;
+  }
+  .post_list article .excerpt .line{
+    display: none;
+  }
+
+  body.home .most_popular li a {
+    line-height: 17px;
+    font-size: 86%;
+  }
+  
+  body.single,
+  body.page{
+    .post_wpr {
+      padding-top: 20px;
+    }
+    .text{
+      overflow: hidden;
+    }
+  }
+  .next.page-numbers, .prev.page-numbers{
+    margin: 0 5px; 
+  }
+  .pagination.cntt{
+    margin: 0;
+    span, a{
+      padding: 0 10px;
+    }
+  }
+  .block_wpr.pagination .block_cntt{
+    width: 100%;
+    margin: 0;
+  }
+}
+
+
+
+// Menu and collumns
+@media only screen and (max-width: 1099px) {
+  .block_cntt{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .col1-6,
+  .col2-6,
+  .col3-6,
+  .col4-6,
+  .col5-6,
+  .col6-6,
+  .col1-2,
+  .col1-3,
+  .col1-4,
+  .col2-3,
+  .col2-4,
+  .col3-4{
+    width: 100%;
+    float: none;
+  } 
+  h1.logo svg{
+    max-width: 500px;
+  }
+
+  .block_wpr.block_tab.onibus .tab_wpr2{
+    padding-left: 25px;
+  }
+  #tabs-ajax.ui-tabs,
+  .ui-tabs .ui-tabs-nav{
+    display: none;
+  }
+  .block_menu{
+    height: 4px;
+  }
+  .block_wpr.adv.header{
+    background: none;
+    .adv_wpr{
+      padding: 20px 0 0;
+    }
+  }
+  .menu.col1-3{
+    clear: both;
+    &.left,
+    &.right{
+      display: none;
+    }
+  }
+  h1.logo{
+    width: 70%;
+    margin: 0 auto;
+  }
+  .menu_link,
+  .menu.responsive.wpr{
+    display: block !important;
+  }
+
+  .highlight.block_wpr {
+    .col2-3{
+      padding-right: 0;
+    }
+    .lastposts.wpr{
+      margin-top: 30px;
+      padding-bottom: 40px;
+    }
+  }
+
+  .tab_wpr2,
+  .tab_wpr{
+    article{
+      width: 100%;
+      float: none;
+      clear: both;
+      padding-left: 0;
+      padding-bottom: 40px;
+
+      figure{
+        float: left;
+        overflow: hidden;
+        margin-right: 20px;
+        width: 50%;
+      }
+      .title a{
+        color: #fff;
+        font-weight: bold;
+        font-size: 110%;
+      }
+      .text{
+        display: block;
+      }
+      .text,
+      .text a{
+        color: #fff;
+      }
+      &:nth-of-type(1) figure{
+        width: 50%;
+      }
+    }
+  }
+  .block_tab{
+    .recent_posts, 
+    .adv_wpr{
+      padding-left: 0;
+    }
+    .adv_wpr{
+      text-align: center;
+    }
+  }
+
+  .adv img, .adv_wpr img{
+    margin: auto;
+  }
+
+  .block_wpr.blogsecolunas{
+    .col2-3{
+      padding-right: 0;
+    }
+    .most_popular {
+      margin-top: 30px;
+    }
+  }
+  .block_wpr.panorama{
+    .col2-3 .panorama.item{
+      width: 50%;
+      padding-bottom: 20px;
+      &:nth-of-type(2n+1){
+        clear: both;
+      }
+    } 
+    .newsletter.col_cntt{
+      margin-left: 0;
+    }
+  }
+
+  .prefooter{
+    .twitter, .facebook{
+      display: none;
+    }
+    &.sitemap{
+      display: none;
+    }
+    &.contato .formulario{
+      margin-right: 0;
+    }
+  }
+  .prefooter.contato .col1-4{
+    height: 0;
+  }
+  .footer-logo{ display: none;}
+  .copyright_txt span{
+    display: none;
+  }
+  footer #menu-social-1{
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  // Single
+  body.single{
+    .bar_category{ display: none;}
+  }
+  aside{
+    .adv_wpr{
+      text-align: center;
+    }
+    .most_popular, 
+    .newsletter{
+      float: none;
+      max-width: 850px;
+    }
+    .newsletter{
+      margin-left: 0;
+    }
+  }
+  body.home .responsive_menu_subcat_wpr{
+    display: block;
+  }
+  .block_wpr.search{
+    display: block;
+  }
+  .block_wpr.ticker_rss{
+    display: none;
+  }
+  .post_list article .excerpt .line{
+    display: none !important;
+  }
+
+}
+
+@media only screen and (min-width: 1100px) {
+  .col1-4{
+    width: 25%;
+  }  
+  .col3-6,
+  .col1-2,
+  .col2-4{
+    width: 50%;
+  }
+  .col3-4{
+    width: 75%;
+  }
+  .col2-6,
+  .col1-3{
+    width: 33.3333%;
+  } 
+  .col4-6,
+  .col2-3{
+    width: 66.6666%;
+  }
+  .col5-6{
+    width: 83.3333%;
+  }
+  .col1-6{
+    width: 16.6667%;
+  } 
+  .col6-6,
+  .col4-4,
+  .col3-3{
+    width: 100%;
+  }
+  .header_secondary_social .col1-3{
+    width: 25%;
+    &:nth-of-type(2){
+      width: 50%;
+    }
+  }
+  body.home .responsive_menu_subcat_wpr{
+    display: none;
+  }
+  .block_wpr.search{
+    display: none;
+  }
+  .block_wpr.ticker_rss{
+    display: block;
+  }
+
+  .tab_wpr{
+   .col2-3 {
+      h3.title,
+      .post-categories{
+        padding-left: 170px;
+      }
+      article:nth-of-type(1){
+        h3.title,
+        .post-categories{
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  .highlight.block_wpr .lastposts.wpr article .title{
+    padding-left: 130px;
+  }
+  .block_carousel.posvenda .bx-wrapper .title{
+    padding-left: 100px;
+  }
+}
+
+// Home - Tabs - Arroba Banner and Leia Mais
+@media only screen and (min-width: 700px) and (max-width: 1099px) {
+  body.home .tab_wpr{
+    .col1-3{
+      .adv_wpr,
+      .recent_posts{
+        width: 50%;
+        float: left;
+      }
+      .adv_wpr{
+        text-align: left;
+      }
+      .recent_posts{
+        padding-left: 20px;
+      }
+    }
+  }
+  .read_too{
+    article{
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+  .block_wpr.caminhoneiro{
+    .adv_wpr{
+      text-align: center;
+    }
+  }
+}
+
+/* Css POst Content Format style */
+body.single article .text{
+
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: "";
+  }
+
+  blockquote,
+  q {
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    quotes: none;
+  }
+
+  dfn,
+  cite,
+  em,
+  i {
+    font-style: italic;
+  }
+
+  blockquote {
+    border-left: 4px solid #707070;
+    border-left: 4px solid rgba(51, 51, 51, 0.7);
+    color: #707070;
+    color: rgba(51, 51, 51, 0.7);
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-style: italic;
+    line-height: 1.6667;
+    margin-bottom: 1.6667em;
+    padding-left: 0.7778em;
+  }
+
+  blockquote p {
+    margin-bottom: 1.6667em;
+  }
+
+  blockquote > p:last-child {
+    margin-bottom: 0;
+  }
+
+  blockquote cite,
+  blockquote small {
+    color: #333;
+    font-size: 15px;
+    font-size: 1.5rem;
+    font-family: "Noto Sans", sans-serif;
+    line-height: 1.6;
+  }
+
+  blockquote em,
+  blockquote i,
+  blockquote cite {
+    font-style: normal;
+  }
+
+  blockquote strong,
+  blockquote b {
+    font-weight: 400;
+  }
+
+  address {
+    font-style: italic;
+    margin: 0 0 1.6em;
+  }
+
+  code,
+  kbd,
+  tt,
+  var,
+  samp,
+  pre {
+    font-family: Inconsolata, monospace;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  pre {
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.01);
+    border: 1px solid #eaeaea;
+    border: 1px solid rgba(51, 51, 51, 0.1);
+    line-height: 1.2;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 0.8em;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  abbr[title] {
+    border-bottom: 1px dotted #eaeaea;
+    border-bottom: 1px dotted rgba(51, 51, 51, 0.1);
+    cursor: help;
+  }
+
+  mark,
+  ins {
+    background-color: #fff9c0;
+    text-decoration: none;
+  }
+
+  sup,
+  sub {
+    font-size: 75%;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sup {
+    bottom: 1ex;
+  }
+
+  sub {
+    top: .5ex;
+  }
+
+  small {
+    font-size: 75%;
+  }
+
+  big {
+    font-size: 125%;
+  }
+
+
+  /**
+   * 4.0 Elements
+   */
+
+  hr {
+    background-color: #eaeaea;
+    background-color: rgba(51, 51, 51, 0.1);
+    border: 0;
+    height: 1px;
+    margin-bottom: 1.6em;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 1.6em 1.3333em;
+    li{
+      margin-left: 20px;
+    }
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  li > ul,
+  li > ol {
+    margin-bottom: 0;
+  }
+
+  dl {
+    margin-bottom: 1.6em;
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin-bottom: 1.6em;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid #eaeaea;
+    border: 1px solid rgba(51, 51, 51, 0.1);
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-width: 1px 0 0 1px;
+    margin: 0 0 1.6em;
+    table-layout: fixed; /* Prevents HTML tables from becoming too wide */
+    width: 100%;
+  }
+
+  caption,
+  th,
+  td {
+    font-weight: normal;
+    text-align: left;
+  }
+
+  th {
+    border-width: 0 1px 1px 0;
+    font-weight: 700;
+  }
+
+  td {
+    border-width: 0 1px 1px 0;
+  }
+
+  th, td {
+    padding: 0.4em;
+  }
+
+  img {
+    -ms-interpolation-mode: bicubic;
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  del {
+    opacity: 0.8;
+  }
+
+  .alignleft {
+    display: inline;
+    float: left;
+  }
+
+  .alignright {
+    display: inline;
+    float: right;
+  }
+
+  .aligncenter {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  blockquote.alignleft,
+  .wp-caption.alignleft,
+  img.alignleft {
+    margin: 0.4em 1.6em 1.6em 0;
+  }
+
+  blockquote.alignright,
+  .wp-caption.alignright,
+  img.alignright {
+    margin: 0.4em 0 1.6em 1.6em;
+  }
+
+  blockquote.aligncenter,
+  .wp-caption.aligncenter,
+  img.aligncenter {
+    clear: both;
+    margin-top: 0.4em;
+    margin-bottom: 1.6em;
+  }
+
+  .wp-caption.alignleft,
+  .wp-caption.alignright,
+  .wp-caption.aligncenter {
+    margin-bottom: 1.2em;
+  }
+
+  h1 {
+    font-size: 26px;
+    font-size: 2.6rem;
+    line-height: 1.1538;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-size: 2.2rem;
+    line-height: 1.3636;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 1.3333;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  h6,
+  h4,
+  h5{
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+
