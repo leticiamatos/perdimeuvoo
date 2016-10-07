@@ -14,10 +14,15 @@
 		<link href="/img/icons/touch.png" rel="apple-touch-icon-precomposed">
 
 		<link href="style/reset.css" rel="stylesheet" type="text/css">
+		<link href="lib/jquery-ui/jquery-ui.css" rel="stylesheet" type="text/css">
+		<link href="lib/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" type="text/css">
 		<link href="style/screen.css" rel="stylesheet" type="text/css">
 		<link href="style/responsive.css" rel="stylesheet" type="text/css">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/jquery-ui/jquery-ui.js"></script>
+		<script type="text/javascript" src="lib/jquery.bxslider/jquery.bxslider.js"></script>
+		<script type="text/javascript" src="script/utils.js"></script>
 
 
 	</head>
@@ -34,9 +39,10 @@
 							</a>
 						</h1>
 					</div>
-					<div class="col2-4 empty"></div>
-					<div class="col1-4">
+					<div class="col1-4 empty"></div>
+					<div class="col2-4">
 						<a href="#" class="login_btn">Área Restrita</a>
+						<span class="clear"></span>
 						<div class="login_wpr">
 							<form>
 								<div class="form_line">
@@ -47,8 +53,8 @@
 								</div>
 								<div class="buttons">
 									<input type="button" name="button" class="btn" value="acessar" />
-									<a href="#" class="forgot-password">esqueci a senha"</a>
 								</div>
+								<a href="#" class="forgot-password">esqueci a senha</a>
 								<div class="form_msgs">
 
 										<p class="msg msg_error">

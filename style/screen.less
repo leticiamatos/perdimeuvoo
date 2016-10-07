@@ -41,6 +41,13 @@ body {
   -o-border-radius:@radius !important;
   -ms-border-radius:@radius !important;
 }
+.radiusMax (@radius: 50px){
+  border-radius:@radius !important;
+  -moz-border-radius:@radius !important;
+  -webkit-border-radius:@radius !important;
+  -o-border-radius:@radius !important;
+  -ms-border-radius:@radius !important;
+}
 .radiusTop (@radius: 6px 6px 0 0){
   border-radius:@radius !important;
   -moz-border-radius:@radius !important;
@@ -107,7 +114,7 @@ body {
   -o-box-shadow:@shadow !important;
   -ms-box-shadow:@shadow !important;
 }
-.shadow-menu (@shadow: 1px 1px 2px rgba(0,0,0,0.4)){
+.shadow-modal (@shadow: 10px 10px 40px rgba(0,0,0,0.4)){
   box-shadow:@shadow !important;
   -moz-box-shadow:@shadow !important;
   -webkit-box-shadow:@shadow !important;
@@ -127,6 +134,24 @@ body {
   -webkit-box-shadow:@shadow !important;
   -o-box-shadow:@shadow !important;
   -ms-box-shadow:@shadow !important;
+}
+.gradient (@gradiente1: rgba(0,0,0,0.65) 0%, @gradiente2: rgba(0,0,0,0) 100%){
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+background: -moz-linear-gradient(top, @gradiente1, @gradiente2); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  @gradiente1, @gradiente2); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  @gradiente1, @gradiente2); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+}
+.columns3 (@columns: 3){
+  -webkit-column-count: @columns; 
+  -moz-column-count: @columns; 
+  column-count: @columns;
+}
+.columns2 (@columns: 2){
+  -webkit-column-count: @columns; 
+  -moz-column-count: @columns; 
+  column-count: @columns;
 }
 
 .verticalAlign{
@@ -175,14 +200,24 @@ body{
 }
 
 /* Form style */
+input.calendar,
 input.txt,
-textarea.txt{
+textarea{
+  background: transparent;
   font-family: @fontRegular;
+  border-left: 1px solid #666;
+  border-bottom: 1px solid #666;
+  border-top: none;
+  border-right: none;
+  font-size: 16px;
+  padding: 10px;
   text-indent: 10px;
   resize: none;
 
   -webkit-appearance: none;
   -webkit-border-radius: 0;
+
+  .innerBorder;
 }
 ::-webkit-input-placeholder {
   opacity: 0.5;
@@ -199,10 +234,6 @@ textarea.txt{
 a.btn,
 input.btn{
   cursor: pointer;
-  font-family: @fontRegular;
-  padding-left: 20px;
-  padding-right: 20px;
-  height: 29px;
   border: none;
 
   -webkit-appearance: none;
@@ -260,7 +291,6 @@ input.btn{
 .loading_page{
 
   .row{
-    background: @cTest;
     width: 100%;
     position: absolute;
     top: 50%;
@@ -280,8 +310,14 @@ input.btn{
 header{
   padding: 2px 0 5px;
   background: @cRed;
+
   .block_cntt{
-    border-bottom: 1px solid #fff;
+    height: 75px;
+    overflow: hidden;
+    .transition;
+    &.active{
+      height: 200px;
+    }
   }
 }
 .login_btn{
@@ -294,9 +330,56 @@ header{
   line-height: 35px;
   display: block;
   text-align: center;
+  float: right;
+  padding-right: 50px;
 }
 .login_wpr{
-  display: none;
+  padding-top: 30px;
+  text-align: right;
+  .form_line{
+    float: left;
+    width: 42%;
+  }
+  .buttons{
+    float: left;
+    width: 16%;
+    .btn{
+      padding: 8px 6px;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: @cRed;
+      font-weight: bold;
+      background: #fff;
+    }
+  }
+  input.txt{
+    padding: 5px;
+    border-color: #fff;
+    color: #fff;
+  }
+  .forgot-password{
+    font-size: 12px;
+    color: #fff;
+    // margin-right: 80px;
+    margin-top: 10px;
+    display: inline-block;
+  }
+  .form_msgs{
+    display: none;
+    margin-bottom: 20px;
+    display: block;
+    height: 30px;
+    margin-top: 10px;
+    line-height: 30px;
+    background: #fff;
+    color: @cRed;
+    text-align: center;
+    padding: 0 20px;
+    font-size: 13px;
+    text-transform: uppercase;
+    clear: both;
+    .radius;
+  }
 }
 
 h1.logo{
@@ -337,6 +420,7 @@ h1.logo{
     }
   }
   .block-01{
+    border-top: 1px solid #fff;
     background: @cRed;
     padding: 100px 0;
     .col2-3{
@@ -517,21 +601,24 @@ footer{
     .social_item{
       display: block;
       float: left;
-      width: 30px;
-      height: 30px;
-      background-image: url(../img/social.png);
-      border-right: 1px solid @cNavy;
-      &:last-of-type{
+      a{
+        border-right: 1px solid @cNavy;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-image: url(../img/social.png);
+      }
+      &:last-of-type a{
         border-right: none;
         background-position: -90px center;
       }
-      &:first-of-type{
+      &:first-of-type a{
         background-position: left center;
       }
-      &:nth-of-type(2){
+      &:nth-of-type(2) a{
         background-position: -30px center;
       }
-      &:nth-of-type(3){
+      &:nth-of-type(3) a{
         background-position: -60px center;
       }
     }
@@ -544,6 +631,233 @@ footer{
     .verticalAlign;
     a{
       padding: 0 10px;
+    }
+  }
+}
+#plane{
+  fill: #777;
+  width: 100px;
+}
+#plane_path{
+  stroke: #D9DADA;
+  stroke-width: .1%;
+  stroke-width: .5%;
+  stroke-dasharray: 1% 2%;
+  stroke-linecap: round;
+  fill: none;
+}
+
+// Form
+.page_form{
+  padding-top: 60px;
+  background: url(../img/bg.gif);
+  .title_wpr{
+    text-align: center;
+    color: @cRed;
+    border-bottom: 2px solid @cRed;
+    padding-bottom: 30px;
+  }
+
+  .page_title{
+    font-size: 70px;
+    font-family: @fontSlab;
+    font-weight: bold;
+    text-align: center;
+  }
+  .page_subtitle{
+    text-align: center;
+    font-size: 20px;
+  }
+  .block_txt{
+    width: 800px;
+    margin: 0 auto;
+    padding: 100px 0;
+  }
+  .form_top{
+    height: 50px;
+    width: 100%;
+    background: @cNavy;
+    .radiusTop;
+  }
+  .bx-wrapper{
+    border-left: 2px solid @cGrayFooter;
+    border-bottom: 2px solid @cGrayFooter;
+    border-right: 2px solid @cGrayFooter;
+    margin-bottom: 30px;
+    background: #fff;
+    .radiusBottom;
+    .shadow-modal;
+  }
+  .form_slide_wpr,
+  .form_slide{
+    height: 400px;
+    width: 100% !important;
+  }
+  .form_slide{
+    .innerBorder;
+
+    .form_div{
+      width: 100%;
+      padding: 0 70px;
+      .verticalAlign;
+    }
+    .presenttn{
+      text-align: center;
+      .question{
+        width: 80%;
+      }
+    }
+    h4{
+      font-size: 50px;
+      color: @cNavy;
+      font-weight: bold;
+      padding-bottom: 30px;
+    }
+    .question{
+      font-size: 30px;
+      line-height: 31px;
+      font-weight: bold;
+      font-family: @fontSlab;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    textarea,
+    input.txt{
+      width: 100%;
+    }
+    input.calendar{
+
+    }
+    .checkbox_list,
+    .radiobutton_list{
+      li{
+        padding-bottom: 5px;
+      }
+      label{
+        padding-left: 10px;
+      }
+    }
+    select{
+      font-size: 16px;
+    }
+    .msg{
+      display: block;
+      position: absolute;
+      bottom: 20px;
+      left: 70px;
+      max-width: 300px;
+      padding: 15px;
+      font-size: 12px;
+      text-transform: uppercase;
+      line-height: 15px;
+      display: none;
+      .innerBorder;
+      .radius;
+
+      &.error{
+        border: 2px solid @cRed;
+        color: @cRed;
+      }
+      &.success{
+        border: 2px solid @cGreen;
+        color: @cGreen;
+      }
+      &.caution{
+        border: 2px solid @cOrange;
+        color: @cOrange;
+        display: block;        
+      }
+    }
+    .info_list{
+      font-size: 13px;
+      margin-bottom: 20px;
+      max-height: 190px;
+      overflow-y: auto;
+      .columns2;
+    }
+    .obs{
+      font-size: 13px;
+      font-style: italic;
+      color: #777;
+      border-left: 3px solid @cOrange;
+      padding-left: 10px;
+    }
+    .btn{
+      margin-top: 10px;
+      background-color: @cGreen;
+      padding: 10px 20px;
+      color: #fff;
+      font-size: 18px;
+      // text-transform: uppercase;
+      font-family: @fontSlab;
+      float: right;
+    }
+  }
+  .bx-controls{
+    // position: relative;
+
+    .bx-pager{
+      position: absolute;
+      clear: both;
+      top: 15px;
+      left: -45px;
+    }
+    .bx-pager-item{
+      clear: both;
+      // border-top: 5px solid #fff;
+      // border-bottom: 5px solid #fff;
+      margin-bottom: 10px;
+      
+      a{
+        position: relative;
+        left: 0;
+        display: block;
+        text-align: center;
+        border: 8px solid #fff;
+        height: 25px;
+        width: 25px;
+        line-height: 20px;
+        font-size: 13px;
+        color: transparent;
+        .radiusMax;
+        &:hover{
+          border: 3px solid #fff;
+          left: 5px;
+        }
+        &.active{
+          border-color: @cNavy;
+          left: 30px;
+        }
+      }
+    }
+    .bx-controls-direction{
+      height: 80px;
+      border-top: 1px solid #ccc;
+      margin: 0 50px;
+      text-align: right;
+      a{
+        color: transparent;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+        background-color: #ccc;
+        background-repeat: no-repeat;
+        background-position: center;
+        .radiusMax;
+        &.bx-next{
+          background-image: url(../img/arrow_slide-right.png);
+        }
+        &.bx-prev{
+          background-image: url(../img/arrow_slide-left.png);
+          margin-right: 20px;
+        }
+        &:hover{
+          background-color: @cNavy;
+          .noOpacity;
+        }
+      }
     }
   }
 }
