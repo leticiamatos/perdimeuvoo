@@ -4,15 +4,28 @@
 ------------------------------------ */ 
 
   /* Colors */
-  @cK:          #111111;
-
-  @cBg:         #FBFBF9;
   @cRed:        #DA513E;
   @cNavy:       #333F4F;
-  @cGrayFooter: #F1F1F1;
   @cGreen:      #2F975B;
   @cOrange:      #EF7727;
   
+  @cK:          #111111;
+  @cBg:         #FBFBF9;
+  @cGrayFooter: #F1F1F1;
+  
+  // New Colors
+  @cNavy:   #003A5C;
+  @cB:  #00657F;
+  @cBLight: #00ABC7;
+  @cBLightA: rgba(0, 171, 199, 0.3);
+  @cGreenLight: #00AC68;
+  @cGreen:  #007549;
+  @cGreenDark:#286040;
+  @cRed:    #A71D2D;
+  @cOrange: #E24301;
+  @cGrayLight:   #5C666F;
+  @cGray:   #333D47;
+
   @cTest:rgba(0,255,0,0.5);  
   
   /* Measures */
@@ -108,6 +121,20 @@ body {
   opacity: 1 !important;
 }
 .shadow (@shadow: 3px 3px 2px rgba(0,0,0,0.3)){
+  box-shadow:@shadow !important;
+  -moz-box-shadow:@shadow !important;
+  -webkit-box-shadow:@shadow !important;
+  -o-box-shadow:@shadow !important;
+  -ms-box-shadow:@shadow !important;
+}
+.shadow-flat (@shadow: 8px 9px 0px rgba(0,0,0,.2)){
+  box-shadow:@shadow !important;
+  -moz-box-shadow:@shadow !important;
+  -webkit-box-shadow:@shadow !important;
+  -o-box-shadow:@shadow !important;
+  -ms-box-shadow:@shadow !important;
+}
+.shadow-flat_hover (@shadow: 3px 4px 0px rgba(0,0,0,.4)){
   box-shadow:@shadow !important;
   -moz-box-shadow:@shadow !important;
   -webkit-box-shadow:@shadow !important;
@@ -309,7 +336,7 @@ input.btn{
 // Header
 header{
   padding: 2px 0 5px;
-  background: @cRed;
+  background: @cB;
 
   .block_cntt{
     height: 75px;
@@ -347,7 +374,7 @@ header{
       padding: 8px 6px;
       text-transform: uppercase;
       font-size: 12px;
-      color: @cRed;
+      color: @cB;
       font-weight: bold;
       background: #fff;
     }
@@ -365,7 +392,9 @@ header{
     display: inline-block;
   }
   .form_msgs{
-    display: none;
+    position: relative;
+  }
+  .msg_error{
     margin-bottom: 20px;
     display: block;
     height: 30px;
@@ -378,12 +407,20 @@ header{
     font-size: 13px;
     text-transform: uppercase;
     clear: both;
+
+    opacity: 0;
+    .transition;
     .radius;
+
+    &.active{
+      opacity: 1;
+    }
   }
 }
 
 h1.logo{
-  width: 70px;
+  width: 60px;
+  padding-top: 5px;
   text-align: center;
 
   path, polygon, rect{
@@ -397,12 +434,13 @@ h1.logo{
 }
 
 // Home
-// body.home {
+body.home {
   h1.logo{ visibility:hidden;}
-// }
+}
 .section_separation{
   height: 90px;
-  background: @cNavy url(../img/stripes.png) fixed;
+  // background: @cNavy url(../img/stripes.png) fixed;
+  background: @cNavy;
   width: 100%;
 }
 .page_home{
@@ -421,7 +459,7 @@ h1.logo{
   }
   .block-01{
     border-top: 1px solid #fff;
-    background: @cRed;
+    background: @cB;
     padding: 100px 0;
     .col2-3{
       padding-left: 70px;
@@ -448,7 +486,7 @@ h1.logo{
   }
   .block-02{
     padding: 100px 0;
-    background: #f7f7f7;
+    background: #F1F1F2;
   }
   .title_wpr{
     text-align: center;
@@ -468,6 +506,10 @@ h1.logo{
   }
   .block_txt{
     padding-top: 30px;
+    .step_list{
+      max-width: 700px;
+      margin: 0 auto;
+    }
     .step_item{
       clear: both;
       margin-bottom: 30px;
@@ -481,13 +523,14 @@ h1.logo{
         .ico{ background: url(../img/comofaz-ico03.png) center no-repeat;}
       }
     }
-    .faketab{
-      display: block;
-      width: 435px;
-      float: left;
-      height: 200px;
-      background: url(../img/comofaz_bg.png) left center no-repeat, url(../img/comofaz_bg_fixed.png) center fixed;
+    .col1-4{
       position: relative;
+      height: 100%;
+    }
+    .faketab{
+      position: relative;
+      display: block;
+      height: 200px;
       z-index: 3;
 
       .step-word,
@@ -501,24 +544,33 @@ h1.logo{
       .step-word{
         top: 10px;
         font-size: 14px;
+        display: none;
       }
       .order{
-        top: 41px;
-        font-size: 80px;
+        background: url(../img/comofaz_bg.png) center no-repeat, url(../img/comofaz_bg_fixed.png) center fixed;
+        height: 120px;
+        width: 150px;
+        line-height: 112px;
+        top: 30px;
+        font-size: 60px;
         font-family: @fontSlab;
         font-weight: bold;
+        color: @cGray;
       }
 
-      .ico{
-        width: 194px;
-        height: 200px;
-        position: absolute;
-        left: 240px;
-        top: 0;
-      }
+    }
+    .ico{
+      display: block;
+      width: 125px;
+      height: 130px;
+      // position: absolute;
+      // left: 240px;
+      // top: 0;
+      // padding-right: 50px;
+      // .verticalAlign;
     }
     .text_wpr{
-      background: #fff;
+      // background: #fff;
       height: 200px;
       font-size: 16px;
       position: relative;
@@ -527,7 +579,6 @@ h1.logo{
       
       .text_cntt{
         display: inline-block;
-        padding: 50px;
         .verticalAlign;
       }
       .step_title{
@@ -536,7 +587,35 @@ h1.logo{
         font-size: 40px;
         line-height: 40px;
         padding-bottom: 10px;
+        color: @cGray;
       }
+    }
+  }
+  .block_wpr.start{
+    padding: 150px 0;
+    background: #CCE5ED url(../img/clouds.png) fixed;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    a{
+      position: relative;
+      display: inline-block;
+      color: #fff;
+      padding: 30px 50px 35px;
+      // background: rgba(255,255,255,0.2);
+      background: @cGreenLight;
+      margin-top: 40px;
+      letter-spacing: -2px;
+      top: 0;
+      left: 0;
+      .radius;
+      .shadow-flat;
+    }
+    a:hover{
+      top: 5px;
+      left: 5px;
+      .shadow-flat_hover;
+      .noOpacity;
     }
   }
   .block-03{
@@ -551,8 +630,8 @@ h1.logo{
       border: 8px solid @cGrayFooter;
       background: #fff;
       margin: 10px;
-      padding: 10px;
-      height: 240px;
+      padding: 0 10px 10px;
+      height: 300px;
       text-align: center;
       .radius;
 
@@ -566,6 +645,32 @@ h1.logo{
         padding-top: 10px;
       }
     }
+    .icon{
+      display: block;
+      height: 80px;
+      width: 80px;
+      margin: 0 auto 5px;
+    }
+    .why_item:nth-of-type(1){
+      .icon{
+        background: url(../img/porqueopmv_ico3.png) center;
+      }
+    }
+    .why_item:nth-of-type(2){
+      .icon{
+        background: url(../img/porqueopmv_ico4.png) center;
+      }
+    }
+    .why_item:nth-of-type(3){
+      .icon{
+        background: url(../img/porqueopmv_ico2.png) center;
+      }
+    }
+    .why_item:nth-of-type(4){
+      .icon{
+        background: url(../img/porqueopmv_ico1.png) center;
+      }
+    }
   }
 }
 
@@ -573,7 +678,7 @@ h1.logo{
 // Footer
 footer{
   padding: 10px 0;
-  background: @cGrayFooter;
+  background: @cGrayFooter url(../img/bg.gif);
   color: @cNavy;
 
   .footer_menu_wpr,
@@ -588,7 +693,7 @@ footer{
     width: 90px;
 
     path, polygon, rect{
-      fill: @cRed;
+      fill: @cB;
     }
   }
   .social_list{
@@ -647,32 +752,34 @@ footer{
   fill: none;
 }
 
+
+.title_wpr{
+  text-align: center;
+  color: @cB;
+  border-bottom: 2px solid @cB;
+  padding-bottom: 30px;
+}
+
+.page_title{
+  font-size: 70px;
+  font-family: @fontSlab;
+  font-weight: bold;
+  text-align: center;
+}
+.page_subtitle{
+  text-align: center;
+  font-size: 20px;
+}
+.block_txt{
+  width: 800px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
 // Form
 .page_form{
   padding-top: 60px;
   background: url(../img/bg.gif);
-  .title_wpr{
-    text-align: center;
-    color: @cRed;
-    border-bottom: 2px solid @cRed;
-    padding-bottom: 30px;
-  }
-
-  .page_title{
-    font-size: 70px;
-    font-family: @fontSlab;
-    font-weight: bold;
-    text-align: center;
-  }
-  .page_subtitle{
-    text-align: center;
-    font-size: 20px;
-  }
-  .block_txt{
-    width: 800px;
-    margin: 0 auto;
-    padding: 100px 0;
-  }
   .form_top{
     height: 50px;
     width: 100%;
@@ -700,6 +807,13 @@ footer{
       width: 100%;
       padding: 0 70px;
       .verticalAlign;
+    }
+    .msg{
+      display: block;
+      position: absolute;
+      bottom: 20px;
+      left: 70px;
+      max-width: 300px;
     }
     .presenttn{
       text-align: center;
@@ -741,34 +855,6 @@ footer{
     select{
       font-size: 16px;
     }
-    .msg{
-      display: block;
-      position: absolute;
-      bottom: 20px;
-      left: 70px;
-      max-width: 300px;
-      padding: 15px;
-      font-size: 12px;
-      text-transform: uppercase;
-      line-height: 15px;
-      display: none;
-      .innerBorder;
-      .radius;
-
-      &.error{
-        border: 2px solid @cRed;
-        color: @cRed;
-      }
-      &.success{
-        border: 2px solid @cGreen;
-        color: @cGreen;
-      }
-      &.caution{
-        border: 2px solid @cOrange;
-        color: @cOrange;
-        display: block;        
-      }
-    }
     .info_list{
       font-size: 13px;
       margin-bottom: 20px;
@@ -782,16 +868,6 @@ footer{
       color: #777;
       border-left: 3px solid @cOrange;
       padding-left: 10px;
-    }
-    .btn{
-      margin-top: 10px;
-      background-color: @cGreen;
-      padding: 10px 20px;
-      color: #fff;
-      font-size: 18px;
-      // text-transform: uppercase;
-      font-family: @fontSlab;
-      float: right;
     }
   }
   .bx-controls{
@@ -829,6 +905,20 @@ footer{
           border-color: @cNavy;
           left: 30px;
         }
+        &.error{
+          border: 3px solid #fff;
+          border-color: @cRed;
+        }
+        &.error.active{
+          border-width: 8px;
+        }
+        &.ok{
+          border-color: @cB;
+          left: 30px;
+        }
+        &.ok.active{
+          border-width: 8px;
+        }
       }
     }
     .bx-controls-direction{
@@ -860,4 +950,200 @@ footer{
       }
     }
   }
+}
+
+// FAQ 
+.page_faq{
+  padding-top: 40px;
+
+  .accordion_wpr{
+    width: 500px;
+    margin: 0 auto;
+  }
+}
+
+// Form validation msgs 
+.msg{
+  display: block;
+  padding: 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 15px;
+  opacity: 0;
+  .transition;
+  .innerBorder;
+  .radius;
+
+  &.error{
+    border: 2px solid @cRed;
+    color: @cRed;
+  }
+  &.success{
+    border: 2px solid @cGreen;
+    color: @cGreen;
+  }
+  &.caution{
+    border: 2px solid @cOrange;
+    color: @cOrange;
+    display: block;        
+  }
+  &.active{
+    opacity: 1;
+  }
+}
+
+.page_form,
+.page_forgotpass{
+  .btn{
+    background-color: @cGreen;
+    padding: 10px 20px;
+    width: 200px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    // text-transform: uppercase;
+    font-family: @fontSlab;
+    margin: 10px auto 0;
+  }
+}
+
+p.info{
+  text-indent: 25px;
+  max-width: 400px;
+  padding: 20px 0;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+// Forgot Password 
+.page_error,
+.page_forgotpass{
+  background: url(../img/bg.gif);
+
+  .block_wpr{
+    padding: 60px 0;
+  }
+  .page_subtitle{
+    text-align: center;
+    font-size: 25px;
+    font-family: @fontSlab;
+    color: @cNavy;
+    border-bottom: 1px solid @cNavy;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+  }
+  .msg_wpr{
+    position: relative;
+    margin-top: 20px;
+    height: 50px;
+    .msg{
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .form_div{
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px 0;
+    .txt{
+      width: 100%;
+    }
+  }
+}
+
+.page_error{
+  .info{
+    text-align: center;
+  }
+}
+
+// FAQ
+.page_faq .block_wpr{
+  padding-bottom: 60px;
+}
+.accordion_wpr{
+  padding: 40px 0;
+}
+.accordion_cntt{
+  h2{
+    font-size: 16px;
+    font-family: @fontSlab;
+    color: @cB;
+    text-transform: uppercase;
+    padding: 10px 0;
+    font-weight: normal;
+
+  }
+  h2::first-letter {
+    font-weight: bold;
+  }
+  p{
+    border-top: 1px dashed #555;
+    font-size: 14px;
+    color: #555;
+    padding: 20px 20px 40px;
+  }
+}
+
+
+// Page Template
+body.template{
+  .page_template .block_wpr{
+    padding: 60px 0;
+  }
+}
+
+// Restricted area - Logged IN
+body.loggedin{
+  header.block_wpr{
+    background: @cBLight;
+    border-bottom: 10px solid @cNavy;
+  }
+  h1.logo{
+    float: left;
+    path, polygon, rect{
+      fill: #fff;
+    }
+  }
+  .loggedin_title{
+    margin-top: 20px;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    height: 35px;
+    line-height: 35px;
+    display: block;
+    float: left;
+    text-align: center;
+    padding-left: 15px;
+  } 
+  .loggedin_info{
+    margin-top: 20px;
+    height: 35px;
+    line-height: 35px;
+    text-align: right;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: bold;
+    a{
+      font-size: 13px;
+      font-weight: normal;
+      letter-spacing: 0;
+      padding-left: 20px;
+      color: #fff;
+      position: relative;
+      top: -1px;
+    }
+  }
+  footer{
+    background-image: none;
+  }
+}
+.loggedin_home{
+
 }

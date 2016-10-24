@@ -31,45 +31,57 @@
 				<div class="block_txt">
 					<ul class="step_list">
 						<li class="step_item step_01">
-							<div class="faketab">
+							<div class="faketab col1-4">
 								<span class="step-word">Passo</span>
 								<span class="order">1</span>
+							</div>
+							<div class="col1-4">
+								&nbsp;
 								<span class="ico"></span>
 							</div>
-							<div class="text_wpr">
+							<div class="text_wpr col2-4">
 								<div class="text_cntt">
 									<h3 class="step_title">Preencha nosso cadastro</h3>
 									<p>e veja se você pode ser indenizado pela companhia aérea;</p>
 								</div>
 							</div>
+							<span class="clear"></span>
 						</li>
 
 						<li class="step_item step_02">
-							<div class="faketab">
+							<div class="faketab col1-4">
 								<span class="step-word">Passo</span>
 								<span class="order">2</span>
+							</div>
+							<div class="col1-4">
+								&nbsp;
 								<span class="ico"></span>
 							</div>
-							<div class="text_wpr">
+							<div class="text_wpr col2-4">
 								<div class="text_cntt">
 									<h3 class="step_title">Fique tranquilo,</h3>
 									<p>nós iremos cuidar de toda a burocracia e de toda a papelada por você</p>
 								</div>
 							</div>
+							<span class="clear"></span>
 						</li>
 
 						<li class="step_item step_03">
-							<div class="faketab">
+							<div class="faketab col1-4">
 								<span class="step-word">Passo</span>
 								<span class="order">3</span>
+							</div>
+							<div class="col1-4">
+								&nbsp;
 								<span class="ico"></span>
 							</div>
-							<div class="text_wpr">
+							<div class="text_wpr col2-4">
 								<div class="text_cntt">
 									<h3 class="step_title">Nós lhe transferimos o dinheiro,</h3>
 									<p>ao final do processo, em caso de sucesso.</p>
 								</div>
 							</div>
+							<span class="clear"></span>
 						</li>
 
 					</ul>
@@ -78,6 +90,15 @@
 			</div>
 		</section>
 
+		<section class="block_wpr start">
+			<div class="block_cntt">
+				<div class="title_wpr">
+					<h2 class="block_title">Vamos Começar!</h2>
+					<h3 class="block_subtitle">Sigas as instruções e deixe o resto conosco</h3>
+				</div>
+				<a href="form.php">Clique aqui</a>
+			</div>
+		</section>
 		<section class="block_wpr block-03">
 			<div class="block_cntt">
 				<div class="title_wpr">

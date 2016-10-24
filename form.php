@@ -11,15 +11,15 @@
 					<p class="form_top"></p>
 					<form>
 						<ul class="form_slide_wpr">
-							<li class="form_slide">
+							<li class="form_slide" data-slideorder="1">
 								<div class="form_div">
 									<p class="question">Qual o seu nome?</p>
-									<input type="text" name="name" class="txt" />
+									<input type="text" id="nome" name="name" class="txt" />
 								</div>
 								<p class="msg error">Ops, um erro.</p>
 								<p class="msg success">Certo, aqui tudo OK.</p>
 							</li>
-							<li class="form_slide">
+							<li class="form_slide" data-slideorder="2">
 								<div class="form_div">
 									<p class="question">Agora uma pergunta com Select.</p>
 									<select class="select">
@@ -29,14 +29,18 @@
 										<option>Opção 03</option>
 									</select>
 								</div>
+								<p class="msg error">Ops, um erro.</p>
+								<p class="msg success">Certo, aqui tudo OK.</p>
 							</li>							
-							<li class="form_slide">
+							<li class="form_slide" data-slideorder="3">
 								<div class="form_div">
 									<p class="question">Qual foi a data pra gente testar esse calendário?</p>
 									<input type="text" name="calendar" class="calendar">
 								</div>
+								<p class="msg error">Ops, um erro.</p>
+								<p class="msg success">Certo, aqui tudo OK.</p>
 							</li>
-							<li class="form_slide">
+							<li class="form_slide" data-slideorder="4">
 								<div class="form_div">
 									<p class="question">E um exemplo de texto fixo antes e depois do input.text?</p>
 									<div class="input_wpr">
@@ -45,8 +49,10 @@
 										<span class="input_pos">,00</span>
 									</div>
 								</div>
+								<p class="msg error">Ops, um erro.</p>
+								<p class="msg success">Certo, aqui tudo OK.</p>
 							</li>
-							<li class="form_slide">
+							<li class="form_slide" data-slideorder="5">
 								<div class="form_div">
 									<p class="question">Outra opção com radiobutton</p>
 										<ul class="radiobutton_list">
@@ -55,14 +61,18 @@
 											<li><input type="radio" name="radio"><label>Não faço ideia!</label></li>
 										</ul>
 								</div>
+								<p class="msg error">Ops, um erro.</p>
+								<p class="msg success">Certo, aqui tudo OK.</p>
 							</li>							
-							<li class="form_slide">
+							<li class="form_slide" data-slideorder="6">
 								<div class="form_div">
 									<p class="question">Então me diga mais:</p>
 									<textarea class="text"></textarea>
 								</div>
+								<p class="msg error">Ops, um erro.</p>
+								<p class="msg success">Certo, aqui tudo OK.</p>
 							</li>
-							<li class="form_slide">
+							<li class="form_slide" data-slideorder="7">
 								<div class="form_div">
 									<p class="question">Quase finalizando, um checkbox e simulando uma pergunta cheia de palavras bacanas e com um tamanho moderadamente grande.</p>
 										<ul class="checkbox_list">
@@ -73,8 +83,10 @@
 											<li><input type="checkbox" name="radio"><label>Chewbacca</label></li>
 										</ul>
 								</div>
+								<p class="msg error">Ops, um erro.</p>
+								<p class="msg success">Certo, aqui tudo OK.</p>
 							</li>
-							<li class="form_slide">
+							<li class="form_slide" data-slideorder="8">
 								<div class="form_div">
 									<p class="question">Confirme seus dados!</p>
 									<div class="form_confirmation">
@@ -89,12 +101,16 @@
 									<p class="obs">Ao clicar no botão "confirmar!" abaixo, você está concordando com os nossos <a href="#">termos de política e privacidade</a>.</p>
 									<input type="button" name="button" value="Confirmar!" class="btn" />
 								</div>
+								<p class="msg error">Ops, um erro.</p>
+								<p class="msg success">Certo, aqui tudo OK.</p>
 							</li>
-							<li class="form_slide">
+							<li class="form_slide" data-slideorder="9">
 								<div class="form_div">
 									<p class="question">Pronto! O cadastro da ocorrência foi efetuado com sucesso. Estes aqui são os seus dados para consultar o andamento do processo.</p>
 									<p class="obs">Antes de fechar esta página, confirme se recebeu estes dados em seu e-mail.</p>
 								</div>
+								<p class="msg error">Ops, um erro.</p>
+								<p class="msg success">Certo, aqui tudo OK.</p>
 							</li>
 
 						</ul>

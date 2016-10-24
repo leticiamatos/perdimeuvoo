@@ -19,7 +19,8 @@
 		<link href="style/screen.css" rel="stylesheet" type="text/css">
 		<link href="style/responsive.css" rel="stylesheet" type="text/css">
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+		<script src="lib/jquery.js"></script>
 		<script type="text/javascript" src="lib/jquery-ui/jquery-ui.js"></script>
 		<script type="text/javascript" src="lib/jquery.bxslider/jquery.bxslider.js"></script>
 		<script type="text/javascript" src="script/utils.js"></script>
@@ -34,7 +35,7 @@
 				<div class="block_cntt">
 					<div class="col1-4">
 						<h1 class="logo">
-							<a href="#" title="Perdi Meu Vôo" alt="Pedi Meu Vôo - identidade visual">
+							<a href="index.php" title="Perdi Meu Vôo" alt="Pedi Meu Vôo - identidade visual">
 								<?php include 'logo.php'; ?>
 							</a>
 						</h1>
@@ -46,7 +47,7 @@
 						<div class="login_wpr">
 							<form>
 								<div class="form_line">
-									<input type="text" name="login" class="txt" placeholder="login" />
+									<input type="text" id="login" name="login" class="txt" placeholder="login" />
 								</div>
 								<div class="form_line">
 									<input type="password" name="password" class="txt" placeholder="senha" />
@@ -54,7 +55,7 @@
 								<div class="buttons">
 									<input type="button" name="button" class="btn" value="acessar" />
 								</div>
-								<a href="#" class="forgot-password">esqueci a senha</a>
+								<a href="forgotpass.php" class="forgot-password">esqueci a senha</a>
 								<div class="form_msgs">
 
 										<p class="msg msg_error">
